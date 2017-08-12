@@ -1,0 +1,77 @@
+var _user$project$Main$clickTile = F3(
+	function (row, col, game) {
+		var _p0 = A3(_user$project$Matrix$get, game.grid, row, col);
+		if (_p0.ctor === 'Just') {
+			var _p1 = _p0._0;
+			if (_p1.isMarked) {
+				return {ctor: '_Tuple2', _0: game, _1: _elm_lang$core$Platform_Cmd$none};
+			} else {
+				if (_p1.isRevealed) {
+					if (_elm_lang$core$Native_Utils.eq(
+						A3(_user$project$Grid$tileNumber, game.grid, row, col),
+						0)) {
+						return {ctor: '_Tuple2', _0: game, _1: _elm_lang$core$Platform_Cmd$none};
+					} else {
+						var newGrid = A3(_user$project$Grid$revealJustNeighbors, row, col, game.grid);
+						return {
+							ctor: '_Tuple2',
+							_0: _elm_lang$core$Native_Utils.update(
+								game,
+								{grid: newGrid}),
+							_1: _elm_lang$core$Platform_Cmd$none
+						};
+					}
+				} else {
+					var newGrid = A3(_user$project$Grid$reveal, row, col, game.grid);
+					var updatedGame = _elm_lang$core$Native_Utils.update(
+						game,
+						{grid: newGrid});
+					return {ctor: '_Tuple2', _0: updatedGame, _1: _elm_lang$core$Platform_Cmd$none};
+				}
+			}
+		} else {
+			return {ctor: '_Tuple2', _0: game, _1: _elm_lang$core$Platform_Cmd$none};
+		}
+	});
+var _user$project$Main$rightClickTile = F3(
+	function (row, col, game) {
+		var _p2 = A3(_user$project$Matrix$get, game.grid, row, col);
+		if (_p2.ctor === 'Just') {
+			if (!_p2._0.isRevealed) {
+				var newGrid = A3(_user$project$Grid$toggle, row, col, game.grid);
+				return {
+					ctor: '_Tuple2',
+					_0: _elm_lang$core$Native_Utils.update(
+						game,
+						{grid: newGrid}),
+					_1: _elm_lang$core$Platform_Cmd$none
+				};
+			} else {
+				return {ctor: '_Tuple2', _0: game, _1: _elm_lang$core$Platform_Cmd$none};
+			}
+		} else {
+			return {ctor: '_Tuple2', _0: game, _1: _elm_lang$core$Platform_Cmd$none};
+		}
+	});
+var _user$project$Main$update = F2(
+	function (msg, game) {
+		var _p3 = msg;
+		if (_p3.ctor === 'ClickTile') {
+			return A3(_user$project$Main$clickTile, _p3._0, _p3._1, game);
+		} else {
+			return A3(_user$project$Main$rightClickTile, _p3._0, _p3._1, game);
+		}
+	});
+var _user$project$Main$subscriptions = function (game) {
+	return _elm_lang$core$Platform_Sub$none;
+};
+var _user$project$Main$init = function () {
+	var seed = _mgold$elm_random_pcg$Random_Pcg$initialSeed(1234);
+	return {
+		ctor: '_Tuple2',
+		_0: A4(_user$project$Game$createGame, 18, 18, 40, seed),
+		_1: _elm_lang$core$Platform_Cmd$none
+	};
+}();
+var _user$project$Main$main = _elm_lang$html$Html$program(
+	{init: _user$project$Main$init, view: _user$project$View$view, update: _user$project$Main$update, subscriptions: _user$project$Main$subscriptions})();

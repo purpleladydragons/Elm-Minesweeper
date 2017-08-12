@@ -1,0 +1,59 @@
+var _user$project$View$viewTile = F4(
+	function (row, col, number, tile) {
+		return A4(_user$project$View_Tile$view, row, col, number, tile);
+	});
+var _user$project$View$viewRow = F3(
+	function (grid, rowIndex, row) {
+		return A2(
+			_elm_lang$html$Html$tr,
+			{ctor: '[]'},
+			A2(
+				_elm_lang$core$List$indexedMap,
+				function (colIndex) {
+					var numNeighbors = A3(_user$project$Grid$tileNumber, grid, rowIndex, colIndex);
+					return A3(_user$project$View$viewTile, rowIndex, colIndex, numNeighbors);
+				},
+				row));
+	});
+var _user$project$View$viewGrid = function (grid) {
+	return A2(
+		_elm_lang$html$Html$div,
+		{ctor: '[]'},
+		{
+			ctor: '::',
+			_0: A2(
+				_elm_lang$html$Html$table,
+				{
+					ctor: '::',
+					_0: _user$project$Styles_Classes$class(
+						{
+							ctor: '::',
+							_0: _user$project$Styles_Classes$Grid,
+							_1: {ctor: '[]'}
+						}),
+					_1: {ctor: '[]'}
+				},
+				{
+					ctor: '::',
+					_0: A2(
+						_elm_lang$html$Html$tbody,
+						{ctor: '[]'},
+						A2(
+							_elm_lang$core$List$indexedMap,
+							_user$project$View$viewRow(grid),
+							_user$project$Matrix$toListOfLists(grid))),
+					_1: {ctor: '[]'}
+				}),
+			_1: {ctor: '[]'}
+		});
+};
+var _user$project$View$view = function (game) {
+	return A2(
+		_elm_lang$html$Html$div,
+		{ctor: '[]'},
+		{
+			ctor: '::',
+			_0: _user$project$View$viewGrid(game.grid),
+			_1: {ctor: '[]'}
+		});
+};

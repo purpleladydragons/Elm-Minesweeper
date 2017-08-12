@@ -1,0 +1,58 @@
+Arguments: 
+  /usr/local/Cellar/node/8.2.1/bin/node /usr/local/Cellar/yarn/0.27.5_1/libexec/bin/yarn.js client
+
+PATH: 
+  /Users/austin/.opam/4.02.3+buckle-master/bin:/Applications/Postgres.app/Contents/Versions/latest/bin:/opt/local/bin:/opt/local/sbin:/Users/austin/.rvm/gems/ruby-2.1.3/bin:/Users/austin/.rvm/gems/ruby-2.1.3@global/bin:/Users/austin/.rvm/rubies/ruby-2.1.3/bin:/Users/austin/torch/install/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/local/bin:/opt/X11/bin:/usr/local/go/bin:/Library/TeX/texbin:/Users/austin/.rvm/bin:/Users/austin/Library/Python/2.7/bin:/usr/local/bin
+
+Yarn version: 
+  0.27.5
+
+Node version: 
+  8.2.1
+
+Platform: 
+  darwin x64
+
+npm manifest: 
+  {
+    "name": "minesweeper",
+    "version": "1.0.0",
+    "description": "minesweeper",
+    "main": "index.js",
+    "license": "MIT",
+    "scripts": {
+      "api": "node api.js",
+      "build:css": "elm-css src/Stylesheets.elm"
+      "build": "yarn run build:css && webpack"
+      "client": "webpack-dev-server --port 3000",
+      "start": "nf start"
+    },
+    "dependencies": {
+      "ace-css": "1.1",
+      "css-loader": "^0.28.4",
+      "elm-webpack-loader": "^4.3.1",
+      "file-loader": "^0.11.2",
+      "font-awesome": "4",
+      "foreman": "^2.0.0",
+      "json-server": "0.9.5",
+      "style-loader": "^0.18.2",
+      "url-loader": "^0.5.9",
+      "webpack": "^3.4.1",
+      "webpack-dev-server": "^2.6.1"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
+
+Trace: 
+  SyntaxError: /Users/austin/code/elm/minesweeper/package.json: Unexpected string in JSON at position 215
+      at JSON.parse (<anonymous>)
+      at /usr/local/Cellar/yarn/0.27.5_1/libexec/lib/yarn-cli.js:747:57
+      at Generator.next (<anonymous>)
+      at step (/usr/local/Cellar/yarn/0.27.5_1/libexec/lib/yarn-cli.js:91:30)
+      at /usr/local/Cellar/yarn/0.27.5_1/libexec/lib/yarn-cli.js:102:13
+      at <anonymous>

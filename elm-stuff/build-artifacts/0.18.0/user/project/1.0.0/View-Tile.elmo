@@ -1,0 +1,102 @@
+var _user$project$View_Tile$color = function (number) {
+	var _p0 = number;
+	switch (_p0) {
+		case 1:
+			return _user$project$Styles_Colors$blue;
+		case 2:
+			return _user$project$Styles_Colors$green;
+		case 3:
+			return _user$project$Styles_Colors$red;
+		case 4:
+			return _user$project$Styles_Colors$purple;
+		case 5:
+			return _user$project$Styles_Colors$brown;
+		case 6:
+			return _user$project$Styles_Colors$mint;
+		case 7:
+			return _user$project$Styles_Colors$black;
+		case 8:
+			return _user$project$Styles_Colors$grey;
+		default:
+			return 'inherit';
+	}
+};
+var _user$project$View_Tile$view = F4(
+	function (row, col, number, tile) {
+		var classes = _user$project$Styles_Classes$classList(
+			{
+				ctor: '::',
+				_0: {ctor: '_Tuple2', _0: _user$project$Styles_Classes$Tile, _1: true},
+				_1: {
+					ctor: '::',
+					_0: {ctor: '_Tuple2', _0: _user$project$Styles_Classes$Tile_unrevealed, _1: !tile.isRevealed},
+					_1: {ctor: '[]'}
+				}
+			});
+		var tileButton = function (content) {
+			return A2(
+				_elm_lang$html$Html$button,
+				{
+					ctor: '::',
+					_0: _elm_lang$html$Html_Attributes$type_('button'),
+					_1: {
+						ctor: '::',
+						_0: classes,
+						_1: {
+							ctor: '::',
+							_0: _elm_lang$html$Html_Events$onClick(
+								A2(_user$project$Msgs$ClickTile, row, col)),
+							_1: {
+								ctor: '::',
+								_0: _user$project$Html_Events_Custom$onRightClick(
+									A2(_user$project$Msgs$RightClickTile, row, col)),
+								_1: {ctor: '[]'}
+							}
+						}
+					}
+				},
+				content);
+		};
+		return tile.isRevealed ? (tile.isMine ? tileButton(
+			{
+				ctor: '::',
+				_0: _elm_lang$html$Html$text('*'),
+				_1: {ctor: '[]'}
+			}) : tileButton(
+			{
+				ctor: '::',
+				_0: A2(
+					_elm_lang$html$Html$strong,
+					{
+						ctor: '::',
+						_0: _elm_lang$html$Html_Attributes$style(
+							{
+								ctor: '::',
+								_0: {
+									ctor: '_Tuple2',
+									_0: 'color',
+									_1: _user$project$View_Tile$color(number)
+								},
+								_1: {ctor: '[]'}
+							}),
+						_1: {ctor: '[]'}
+					},
+					{
+						ctor: '::',
+						_0: _elm_lang$html$Html$text(
+							_elm_lang$core$Basics$toString(number)),
+						_1: {ctor: '[]'}
+					}),
+				_1: {ctor: '[]'}
+			})) : (tile.isMarked ? tileButton(
+			{
+				ctor: '::',
+				_0: _elm_lang$html$Html$text('M'),
+				_1: {ctor: '[]'}
+			}) : tileButton(
+			{
+				ctor: '::',
+				_0: _elm_lang$html$Html$text('#'),
+				_1: {ctor: '[]'}
+			}));
+	});

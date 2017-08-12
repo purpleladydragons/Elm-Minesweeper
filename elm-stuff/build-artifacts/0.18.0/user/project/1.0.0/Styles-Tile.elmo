@@ -1,0 +1,83 @@
+var _user$project$Styles_Tile$snippets = {
+	ctor: '::',
+	_0: A2(
+		_rtfeldman$elm_css$Css$class,
+		_user$project$Styles_Classes$Tile,
+		{
+			ctor: '::',
+			_0: _rtfeldman$elm_css$Css$alignItems(_rtfeldman$elm_css$Css$center),
+			_1: {
+				ctor: '::',
+				_0: _rtfeldman$elm_css$Css$lineHeight(
+					_rtfeldman$elm_css$Css$int(1)),
+				_1: {
+					ctor: '::',
+					_0: _rtfeldman$elm_css$Css$position(_rtfeldman$elm_css$Css$relative),
+					_1: {
+						ctor: '::',
+						_0: _rtfeldman$elm_css$Css$verticalAlign(_rtfeldman$elm_css$Css$top),
+						_1: {
+							ctor: '::',
+							_0: _rtfeldman$elm_css$Css$margin(_rtfeldman$elm_css$Css$zero),
+							_1: {
+								ctor: '::',
+								_0: _rtfeldman$elm_css$Css$padding(
+									_rtfeldman$elm_css$Css$em(0.3)),
+								_1: {
+									ctor: '::',
+									_0: _rtfeldman$elm_css$Css$fontFamilies(
+										{
+											ctor: '::',
+											_0: 'Lucida Console',
+											_1: {
+												ctor: '::',
+												_0: 'monospace',
+												_1: {ctor: '[]'}
+											}
+										}),
+									_1: {
+										ctor: '::',
+										_0: _rtfeldman$elm_css$Css$fontSize(
+											_rtfeldman$elm_css$Css$em(0.7)),
+										_1: {
+											ctor: '::',
+											_0: _rtfeldman$elm_css$Css$backgroundColor(
+												_rtfeldman$elm_css$Css$hex(_user$project$Styles_Colors$white)),
+											_1: {
+												ctor: '::',
+												_0: _rtfeldman$elm_css$Css$focus(
+													{
+														ctor: '::',
+														_0: _rtfeldman$elm_css$Css$outline(_rtfeldman$elm_css$Css$none),
+														_1: {ctor: '[]'}
+													}),
+												_1: {
+													ctor: '::',
+													_0: _rtfeldman$elm_css$Css$borderWidth(
+														_rtfeldman$elm_css$Css$px(2)),
+													_1: {ctor: '[]'}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}),
+	_1: {
+		ctor: '::',
+		_0: A2(
+			_rtfeldman$elm_css$Css$class,
+			_user$project$Styles_Classes$Tile_unrevealed,
+			{
+				ctor: '::',
+				_0: _rtfeldman$elm_css$Css$backgroundColor(
+					_rtfeldman$elm_css$Css$hex(_user$project$Styles_Colors$lightGrey)),
+				_1: {ctor: '[]'}
+			}),
+		_1: {ctor: '[]'}
+	}
+};

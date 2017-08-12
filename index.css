@@ -1,0 +1,33 @@
+.minesweeper-Tile {
+    align-items: center;
+    line-height: 1;
+    position: relative;
+    vertical-align: top;
+    margin: 0;
+    padding: 0.3em;
+    font-family: Lucida Console, monospace;
+    font-size: 0.7em;
+    background-color: #ffffff;
+    border-width: 2px;
+}
+
+.minesweeper-Tile:focus {
+    outline: none;
+}
+
+.minesweeper-Tile_unrevealed {
+    background-color: #d0d0d0;
+}
+
+.minesweeper-Grid {
+    table-layout: fixed;
+    border-spacing: 0;
+    background-color: #ffffff;
+    cell-spacing: 0;
+}
+
+.minesweeper-Grid  td {
+    width: 1em;
+    height: 1em;
+    padding: 0;
+}

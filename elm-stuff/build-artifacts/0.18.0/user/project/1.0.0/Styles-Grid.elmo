@@ -1,0 +1,48 @@
+var _user$project$Styles_Grid$size = _rtfeldman$elm_css$Css$em(1);
+var _user$project$Styles_Grid$snippets = {
+	ctor: '::',
+	_0: A2(
+		_rtfeldman$elm_css$Css$class,
+		_user$project$Styles_Classes$Grid,
+		{
+			ctor: '::',
+			_0: A2(_rtfeldman$elm_css$Css$property, 'table-layout', 'fixed'),
+			_1: {
+				ctor: '::',
+				_0: A2(_rtfeldman$elm_css$Css$property, 'border-spacing', '0'),
+				_1: {
+					ctor: '::',
+					_0: _rtfeldman$elm_css$Css$backgroundColor(
+						_rtfeldman$elm_css$Css$hex(_user$project$Styles_Colors$white)),
+					_1: {
+						ctor: '::',
+						_0: A2(_rtfeldman$elm_css$Css$property, 'cell-spacing', '0'),
+						_1: {
+							ctor: '::',
+							_0: _rtfeldman$elm_css$Css$descendants(
+								{
+									ctor: '::',
+									_0: _rtfeldman$elm_css$Css_Elements$td(
+										{
+											ctor: '::',
+											_0: _rtfeldman$elm_css$Css$width(_user$project$Styles_Grid$size),
+											_1: {
+												ctor: '::',
+												_0: _rtfeldman$elm_css$Css$height(_user$project$Styles_Grid$size),
+												_1: {
+													ctor: '::',
+													_0: _rtfeldman$elm_css$Css$padding(_rtfeldman$elm_css$Css$zero),
+													_1: {ctor: '[]'}
+												}
+											}
+										}),
+									_1: {ctor: '[]'}
+								}),
+							_1: {ctor: '[]'}
+						}
+					}
+				}
+			}
+		}),
+	_1: {ctor: '[]'}
+};

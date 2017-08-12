@@ -1,0 +1,9 @@
+var _user$project$Styles_Classes$namespace = 'minesweeper-';
+var _user$project$Styles_Classes$helpers = _rtfeldman$elm_css_helpers$Html_CssHelpers$withNamespace(_user$project$Styles_Classes$namespace);
+var _user$project$Styles_Classes$class = _user$project$Styles_Classes$helpers.$class;
+var _user$project$Styles_Classes$classList = _user$project$Styles_Classes$helpers.classList;
+var _user$project$Styles_Classes$Grid = {ctor: 'Grid'};
+var _user$project$Styles_Classes$Tile_flag = {ctor: 'Tile_flag'};
+var _user$project$Styles_Classes$Tile_mine = {ctor: 'Tile_mine'};
+var _user$project$Styles_Classes$Tile_unrevealed = {ctor: 'Tile_unrevealed'};
+var _user$project$Styles_Classes$Tile = {ctor: 'Tile'};

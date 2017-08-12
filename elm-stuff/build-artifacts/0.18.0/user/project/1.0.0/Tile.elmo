@@ -1,0 +1,24 @@
+var _user$project$Tile$toggle = function (model) {
+	return _elm_lang$core$Native_Utils.update(
+		model,
+		{isMarked: !model.isMarked});
+};
+var _user$project$Tile$reveal = function (model) {
+	return _elm_lang$core$Native_Utils.update(
+		model,
+		{isRevealed: true});
+};
+var _user$project$Tile$makeBomb = function (model) {
+	return _elm_lang$core$Native_Utils.update(
+		model,
+		{isMine: true});
+};
+var _user$project$Tile$init = function (isMine) {
+	return {isMine: isMine, isRevealed: false, isMarked: false};
+};
+var _user$project$Tile$Tile = F3(
+	function (a, b, c) {
+		return {isMine: a, isRevealed: b, isMarked: c};
+	});
+var _user$project$Tile$Toggle = {ctor: 'Toggle'};
+var _user$project$Tile$Reveal = {ctor: 'Reveal'};

@@ -1,0 +1,8 @@
+var _user$project$Msgs$RightClickTile = F2(
+	function (a, b) {
+		return {ctor: 'RightClickTile', _0: a, _1: b};
+	});
+var _user$project$Msgs$ClickTile = F2(
+	function (a, b) {
+		return {ctor: 'ClickTile', _0: a, _1: b};
+	});
