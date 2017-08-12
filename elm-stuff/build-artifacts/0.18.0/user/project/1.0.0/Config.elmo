@@ -1,4 +1,0 @@
-var _user$project$Config$Config = F3(
-	function (a, b, c) {
-		return {height: a, width: b, numMines: c};
-	});

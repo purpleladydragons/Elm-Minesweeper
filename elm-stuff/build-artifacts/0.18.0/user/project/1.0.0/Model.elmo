@@ -1,4 +1,0 @@
-var _user$project$Model$Model = F2(
-	function (a, b) {
-		return {game: a, config: b};
-	});

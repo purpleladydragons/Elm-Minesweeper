@@ -1,6 +1,0 @@
-var _user$project$Styles_Main$allSnippets = A2(
-	_elm_lang$core$Basics_ops['++'],
-	_user$project$Styles_Global$snippets,
-	A2(_elm_lang$core$Basics_ops['++'], _user$project$Styles_Tile$snippets, _user$project$Styles_Grid$snippets));
-var _user$project$Styles_Main$stylesheet = _rtfeldman$elm_css$Css$stylesheet(
-	A2(_rtfeldman$elm_css$Css_Namespace$namespace, _user$project$Styles_Classes$namespace, _user$project$Styles_Main$allSnippets));
