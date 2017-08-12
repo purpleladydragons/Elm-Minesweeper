@@ -36,4 +36,6 @@ viewRow grid rowIndex row =
 -- how to show counts? should tiles store that info?
 -- should it be computed each time?
 viewTile : Int -> Int -> Int -> Tile.Tile -> Html Msg
-viewTile row col number tile = View.Tile.view row col number tile
+viewTile row col number tile =
+    td []
+        [View.Tile.view row col number tile]

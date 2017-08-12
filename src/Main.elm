@@ -55,20 +55,26 @@ clickTile row col game =
                         let newGrid =
                             Grid.revealJustNeighbors row col game.grid
                         in
-                        ({game | grid = newGrid}, Cmd.none)
+                        checkGameStatus { game | grid = newGrid }
                 else
                     let newGrid =
                         Grid.reveal row col game.grid
                     in
-                    let updatedGame =
-                            { game | grid = newGrid }
-                    in
-                    (updatedGame, Cmd.none)
+                    checkGameStatus { game | grid = newGrid }
 
 
         Maybe.Nothing ->
             (game, Cmd.none)
 
+-- TODO this is a bad function name
+checkGameStatus : Game -> (Game, Cmd Msg)
+checkGameStatus game =
+    if Grid.isGridWon game.grid then
+        ( { game | status = Game.Won }, Cmd.none )
+    else if Grid.isGridLost game.grid then
+        ( { game | status = Game.Lost }, Cmd.none )
+    else
+        (game, Cmd.none)
 
 main : Program Never Game Msg
 main = program { init = init

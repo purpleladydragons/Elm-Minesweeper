@@ -7,17 +7,19 @@ import Styles.Colors as Colors
 snippets : List Snippet
 snippets =
     [ class Tile
-          [ alignItems center
-          , lineHeight (int 1)
+          [ displayFlex
+          , justifyContent center
+          , alignItems center
           , position relative
           , verticalAlign top
           , margin zero
-          , padding (em 0.3)
+          , width (pct 100)
+          , height (pct 100)
           , fontFamilies ["Lucida Console","monospace"]
           , fontSize (em 0.7)
           , backgroundColor (hex Colors.white)
           , focus [outline none]
-          , borderWidth (px 2)
+          , borderWidth (px 1)
           ]
     , class Tile_unrevealed
         [ backgroundColor (hex Colors.lightGrey)

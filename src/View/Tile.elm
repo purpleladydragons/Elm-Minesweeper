@@ -48,14 +48,19 @@ view row col number tile =
     in
     if tile.isRevealed then
         if tile.isMine then
-            tileButton [ text "*" ]
+            tileButton [ strong
+                             [style [("color", Colors.red)] ]
+                             [text "*"] ]
         else
-            tileButton
-                [ strong
-                      [ style [ ("color", color number)] ]
-                      [ text (toString number) ] ]
+            if number == 0 then
+                tileButton [ ]
+            else
+                tileButton
+                    [ strong
+                          [ style [ ("color", color number)] ]
+                          [ text (toString number) ] ]
     else
         if tile.isMarked then
             tileButton [ text "M" ]
         else
-            tileButton [ text "#" ]
+            tileButton [ ]

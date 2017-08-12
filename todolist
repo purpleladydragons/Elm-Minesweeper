@@ -2,7 +2,7 @@
   - try to understand how random generation works in elm better
 - generate mines ~after~ first click
 * recursively reveal 0 tiles
-- reveal tiles when clicking on revealed one
+* reveal tiles when clicking on revealed one
   - how to handle exploding mine and losing?
 * enable right clicking / marking
 - losing and winning
@@ -11,4 +11,4 @@
 - css
   - make tiles smaller, but keep text same size
   - tiles should resize based on number of tiles, so container is same size
-  - make it so tiles don't need text in them to be size
+  * make it so tiles don't need text in them to be size

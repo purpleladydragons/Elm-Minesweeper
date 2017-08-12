@@ -6,7 +6,7 @@ import Styles.Classes exposing (Class(..))
 import Styles.Colors as Colors
 
 size : Em
-size = em 1
+size = em 2
 
 snippets : List Snippet
 snippets =

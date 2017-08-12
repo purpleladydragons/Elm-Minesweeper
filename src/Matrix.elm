@@ -1,9 +1,9 @@
 module Matrix exposing (..)
 
-import Array
+import Array exposing (Array)
 
 type alias Matrix a =
-    Array.Array (Array.Array a)
+    Array (Array a)
 
 init : Int -> Int -> (Int -> Int -> a) -> Matrix a
 init height width f =
@@ -75,3 +75,22 @@ toListOfLists matrix =
     Array.map Array.toList matrix
         |> Array.toList
 
+
+all : Matrix a -> (a -> Bool) -> Bool
+all matrix f =
+    not (any matrix (not << f))
+
+any : Matrix a -> (a -> Bool) -> Bool
+any matrix f =
+    Array.length (filter matrix f) > 0
+
+-- TODO this will append things in reverse order, do we like that?
+filter : Matrix a -> (a -> Bool) -> Array a
+filter matrix f =
+    Array.foldl
+        (\row accum ->
+             Array.filter f row
+             |> Array.append accum
+        )
+        Array.empty
+        matrix

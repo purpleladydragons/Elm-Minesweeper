@@ -1,9 +1,8 @@
 module Grid exposing (..)
 
-import Debug 
 import Set
 import Matrix
-import Tile
+import Tile exposing (Tile)
 import Random.Pcg as Random exposing (Seed)
 
 type alias Grid = Matrix.Matrix Tile.Tile
@@ -142,9 +141,22 @@ recursiveReveal row col (seenCoords, grid) =
             Maybe.Nothing ->
                 (seenCoords, grid)
 
-
 toggle : Int -> Int -> Grid -> Grid
 toggle row col grid =
     Matrix.update grid row col Tile.toggle
 
+isGridWon : Grid -> Bool
+isGridWon grid =
+    Matrix.all grid isTileCorrectlyMarked
 
+isGridLost : Grid -> Bool
+isGridLost grid =
+    Matrix.any grid isRevealedMine
+
+isTileCorrectlyMarked : Tile -> Bool
+isTileCorrectlyMarked tile =
+    tile.isMine && tile.isMarked
+
+isRevealedMine : Tile -> Bool
+isRevealedMine tile =
+    tile.isMine && tile.isRevealed
