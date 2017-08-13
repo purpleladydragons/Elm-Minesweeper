@@ -9,6 +9,7 @@ type alias Game =
     { grid : Grid.Grid
     , status : Status
     , seed : Seed
+    , numMines : Int
     }
 
 createGame : Int -> Int -> Int -> Seed -> Game
@@ -19,4 +20,5 @@ createGame width height numMines seed =
     { grid = grid
     , status = Playing
     , seed = newSeed
+    , numMines = numMines
     }

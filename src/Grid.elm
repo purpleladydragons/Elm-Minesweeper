@@ -7,6 +7,18 @@ import Random.Pcg as Random exposing (Seed)
 
 type alias Grid = Matrix.Matrix Tile.Tile
 
+minWidth : Int
+minWidth = 5
+
+maxWidth : Int
+maxWidth = 70
+
+minHeight : Int
+minHeight = 5
+
+maxHeight : Int
+maxHeight = 50
+
 init : Int -> Int -> Int -> Seed -> (Seed, Grid)
 init height width numMines seed =
     let grid =
@@ -37,10 +49,10 @@ placeRandomMine excludedCoords (seed, grid) =
                     False
 
         rowGenerator =
-            Random.int 0 (Matrix.width grid)
+            Random.int 0 (Matrix.height grid)
 
         colGenerator =
-            Random.int 0 (Matrix.height grid)
+            Random.int 0 (Matrix.width grid)
 
         coordsGenerator =
             Random.pair rowGenerator colGenerator

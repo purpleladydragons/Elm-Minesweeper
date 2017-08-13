@@ -8,12 +8,13 @@ import Matrix
 import Random.Pcg as Random exposing (Seed)
 import View
 
+
+seed : Random.Seed
+seed = Random.initialSeed 1235
+
 init : (Game, Cmd Msg)
 init =
-    let seed =
-        Random.initialSeed 1234
-    in
-    (createGame 18 18 40 seed, Cmd.none)
+    (createGame 8 8 40 seed, Cmd.none)
 
 -- do this
 subscriptions : Game -> Sub Msg
@@ -27,6 +28,34 @@ update msg game =
 
         Msgs.RightClickTile row col ->
             rightClickTile row col game
+
+        Msgs.ChangeWidthSelect string ->
+            ( updateGridSize
+                  (parseWidth game string)
+                  (Matrix.height game.grid)
+                  game
+            , Cmd.none )
+
+        Msgs.ChangeHeightSelect string ->
+            ( updateGridSize
+                  (Matrix.width game.grid)
+                  (parseHeight game string)
+                  game
+            , Cmd.none )
+
+updateGridSize : Int -> Int -> Game -> Game
+updateGridSize width height game =
+    createGame width height game.numMines seed
+
+parseWidth : Game -> String -> Int
+parseWidth game string =
+    String.toInt string
+        |> Result.withDefault (Matrix.width game.grid)
+
+parseHeight : Game -> String -> Int
+parseHeight game string =
+    String.toInt string
+        |> Result.withDefault (Matrix.height game.grid)
 
 rightClickTile : Int -> Int -> Game -> (Game, Cmd Msg)
 rightClickTile row col game =

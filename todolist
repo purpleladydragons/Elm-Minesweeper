@@ -7,8 +7,10 @@
 * enable right clicking / marking
 - losing and winning
 - extra view stuff like bombs remaining etc
-- configurable size and num bombs 
+* configurable size 
+- configurable num bombs
+- performance issues
 - css
-  - make tiles smaller, but keep text same size
+  * make tiles smaller, but keep text same size
   - tiles should resize based on number of tiles, so container is same size
   * make it so tiles don't need text in them to be size

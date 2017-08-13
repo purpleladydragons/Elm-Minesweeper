@@ -16,7 +16,7 @@ snippets =
           , width (pct 100)
           , height (pct 100)
           , fontFamilies ["Lucida Console","monospace"]
-          , fontSize (em 0.7)
+          , fontSize (em 1.2)
           , backgroundColor (hex Colors.white)
           , focus [outline none]
           , borderWidth (px 1)

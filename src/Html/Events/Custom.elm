@@ -9,3 +9,8 @@ onRightClick tagger =
     Html.Events.onWithOptions "contextmenu"
         { stopPropagation = True, preventDefault = True }
         (Decode.succeed tagger)
+
+onChange : (String -> msg) -> Attribute msg
+onChange tagger =
+    Html.Events.on "change"
+        (Decode.map tagger Html.Events.targetValue)
